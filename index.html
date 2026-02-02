@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CWISE | Coming Soon</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8XW6RYXXZ6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-8XW6RYXXZ6');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0f2742;
+            --bg-secondary: #0a1a2e;
+            --accent: #acef5e;
+            --text-white: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --input-bg: rgba(255, 255, 255, 0.08);
+            --input-border: rgba(172, 239, 94, 0.3);
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Montserrat Alternates', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Subtle background pattern */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                    radial-gradient(ellipse at 20% 20%, rgba(172, 239, 94, 0.03) 0%, transparent 50%),
+                    radial-gradient(ellipse at 80% 80%, rgba(172, 239, 94, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            width: 280px;
+            max-width: 80%;
+            height: auto;
+            margin-bottom: 32px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .tagline {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+
+        .tagline span {
+            color: var(--accent);
+            margin: 0 8px;
+        }
+
+        .status {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 12px;
+            animation: fadeIn 1s ease-out 0.4s both;
+        }
+
+        .status-sub {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .contact-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 16px;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 16px 20px;
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            background: var(--input-bg);
+            border: 1px solid var(--input-border);
+            border-radius: 8px;
+            color: var(--text-white);
+            transition: all 0.3s ease;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 20px rgba(172, 239, 94, 0.1);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            padding: 16px 40px;
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: var(--accent);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+        }
+
+        .submit-btn:hover {
+            background: #c4ff7a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(172, 239, 94, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: 30px 16px;
+            }
+
+            .logo {
+                width: 220px;
+                margin-bottom: 24px;
+            }
+
+            .tagline {
+                font-size: 11px;
+                letter-spacing: 1px;
+            }
+
+            .tagline span {
+                margin: 0 4px;
+            }
+
+            .status {
+                font-size: 22px;
+            }
+
+            .status-sub {
+                font-size: 14px;
+                margin-bottom: 40px;
+            }
+
+            .form-row {
+                flex-direction: column;
+            }
+
+            input, textarea {
+                padding: 14px 16px;
+                font-size: 16px;
+            }
+
+            .submit-btn {
+                width: 100%;
+                padding: 16px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .tagline {
+                font-size: 10px;
+            }
+
+            .logo {
+                width: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Logo -->
+    <svg class="logo" viewBox="0 0 882.21 339.24" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <style>
+                .st0 { fill: #fff; }
+                .st1 { fill: #acef5e; }
+            </style>
+        </defs>
+        <g>
+            <path class="st1" d="M168.15,325.94c-16.45,8.72-34.79,13.3-53.61,13.3C51.38,339.24,0,287.84,0,224.7s51.38-114.55,114.54-114.55c3.99,0,7.94.21,11.87.61v-.02c7.52.98,22.29,3.99,39.96,13.06-1.75,5.02-3.16,10.19-4.25,15.51l-4.58,22.64-22.1-6.7c-6.73-2.03-13.76-3.06-20.91-3.06-39.98,0-72.51,32.51-72.51,72.51s32.53,72.49,72.51,72.49c13.78,0,27.15-3.86,38.7-11.19,1.24,15.8,6.47,29.39,14.91,39.93Z"/>
+            <path class="st1" d="M443.36,141.18h-42.55c-10.54-56.71-60.31-99.14-119.52-99.14-42.71,0-81.29,22.46-103.03,57.04-5.51-3.51-20.12-11.97-39.16-16.41C167.61,32.81,221.45,0,281.29,0c82.35,0,151.11,61.01,162.07,141.18Z"/>
+        </g>
+        <g>
+            <path class="st0" d="M397.61,264.3c0,16.6-10.07,27.26-25.18,27.26-15.99,0-26.65-10.66-26.65-27.26v-68.81h-52.14v68.81c0,16.6-10.07,27.26-25.48,27.26s-26.05-10.66-26.05-27.26v-45.62h-52.14v47.99c0,42.95,27.85,71.67,69.91,71.67,23.7,0,48.58-12.72,60.14-31.99,12.15,19.27,36.73,31.99,60.73,31.99,41.46,0,69-28.72,69-71.67v-90.94h-52.13v88.56Z"/>
+            <rect class="st0" x="484.99" y="175.73" width="52.43" height="160.25"/>
+            <path class="st0" d="M511.35,101.97c-16.29,0-27.85,11.55-27.85,28.14s11.55,28.14,27.85,28.14,27.84-11.55,27.84-28.14-11.55-28.14-27.84-28.14Z"/>
+            <path class="st0" d="M633.69,210.09c13.03,0,31.1,5.92,50.95,16.29l17.77-34.36c-20.14-12.14-43.54-18.66-66.65-18.66-37.62,0-65.76,18.36-65.76,51.84,0,55.39,82.64,44.43,82.64,66.35,0,6.52-7.11,9.78-16.88,9.78-17.77,0-38.51-7.11-56.87-19.85l-16.59,34.06c19.55,15.11,45.32,22.81,72.28,22.81,39.1,0,67.83-18.66,67.83-51.54.3-55.69-83.83-45.62-83.83-66.65,0-6.81,6.22-10.07,15.11-10.07Z"/>
+            <path class="st0" d="M808.15,298.07c-15.4,0-27.25-8-33.18-21.92l107.23-25.77c-1.18-47.39-32.88-76.72-80.87-76.42-51.25.29-83.53,33.47-83.53,82.64s34.66,81.16,86.49,81.16c30.21,0,54.8-10.66,73.46-32.58l-29.62-26.66c-11.85,12.74-25.77,19.55-39.99,19.55ZM803.71,211.28c13.03,0,22.81,6.81,26.66,21.03l-59.54,14.81c1.78-23.1,13.92-35.84,32.88-35.84Z"/>
+        </g>
+    </svg>
+
+    <!-- Tagline -->
+    <p class="tagline">DevOps for Fintech<span>|</span>PlatformOps<span>|</span>GitOps<span>|</span>AWS</p>
+
+    <!-- Status -->
+    <h1 class="status">New Site Coming Soon</h1>
+    <p class="status-sub">We're working on something great. Stay tuned!</p>
+
+    <!-- Contact Form -->
+    <div class="contact-section">
+        <h2 class="contact-title">Contact Us</h2>
+        <form class="form" id="contactForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <textarea id="message" name="message" placeholder="Message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        const subject = encodeURIComponent('Website Contact from ' + name);
+        const body = encodeURIComponent(
+            'Name: ' + name + '\n' +
+            'Email: ' + email + '\n\n' +
+            'Message:\n' + message
+        );
+
+        window.location.href = 'mailto:info@cwise.eu?subject=' + subject + '&body=' + body;
+    });
+</script>
+</body>
+</html>
